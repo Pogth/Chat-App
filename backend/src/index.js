@@ -35,6 +35,9 @@ app.use("/api/messages", messageRoutes);
 //     res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
 //   });
 // }
+app.get("*", (req, res) => {
+  res.send("Backend Only")
+})
 
 server.listen(PORT, () => {
   console.log("server is running on PORT:" + PORT);
